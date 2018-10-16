@@ -1,0 +1,14 @@
+$white : #efeee9;
+$beige: #eeebdf; // бежевый
+$main-font-color : #373e42;
+
+//layout setups
+@import "normalize";
+@import "layout/setups"; // стандартные настройки стилей
+@import "layout/fonts";
+@import "layout/common";
+
+//mixins
+@import "helpers/mixins";
+
+@import "blocks/**/*.scss";

@@ -1,0 +1,17 @@
+.map{
+    position: relative;
+}
+.contacts{
+    width: 380px;
+    // height: 290px;
+    @include centered();
+    background-color: $white;
+    padding: 0px 40px;
+}
+.contacts__item{
+    display: flex;
+    margin-bottom: 30px;
+}
+.contacts__item-icon{
+    margin-right: 5px; 
+}

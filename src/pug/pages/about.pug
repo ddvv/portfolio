@@ -1,0 +1,101 @@
+extends ../main.layout.pug
+block title
+  | About
+block content
+
+  section.section.hero
+    
+    .hero__bg
+      img(src="./img/about/header/photo.png", alt="").hero__bg-img
+
+    header.header
+      ul.socials
+        each item in ['vk', 'github', 'in']
+          li.socials__item
+            a(href="" class=`socials__link socials__link_${item}`)
+              img(src=`./img/icons/svg/${item}.svg`, alt="")
+      
+      a(href="").hamburger
+        img(src="./img/icons/hamburger.svg")
+    
+    a(href="").down-arrow
+      img(src="./img/icons/arrow_down.svg").down-arrow__icon
+    
+    .hero__title
+      img(src="./img/about/header/portfolio-header.png", alt="").section-title
+      .user.hero__user-block
+        .user__photo
+          .user__photo-avatar
+            img(src="./img/about/header/doge.jpg", alt="")
+        .user__name Doge Doge
+        .user__desc Веб-сайт Doge
+        
+    svg(class="triangle about__triangles" xmlns='http://www.w3.org/2000/svg', viewBox='0 0 1000 85', preserveAspectRatio='none')
+      polygon(class="triangle_fill_white" points='0,0   0,86   500.8,86   500.8,75.5')
+      polygon(class="triangle_fill_beige" points='1000,0   1000,86   500,86   500,75.5')
+  
+  section.section.about
+    
+    .about__left
+      
+      
+      +title('О Doge', 'about-header.png', 'about__section-title')
+            
+      .user-about
+        .user-about__picture
+          img(src="./img/about/header/doge.jpg", alt="", width="450")
+        .user-about__title
+          .subtitle
+            | Кто я
+        .user-about__text
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    
+    .about__right
+    
+      .about-data
+        .about-data__description.about-user-info
+          .about-user-info__title
+            .subtitle Чем я могу быть полезен
+          .about-user-info__text
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam officia incidunt, quisquam sit harum totam, perspiciatis nesciunt, culpa at, laborum nobis error. In doloremque iusto rem, alias incidunt, expedita quos.
+        
+        .about-data__content
+          ul.skills
+            each skill in skills
+                each skillsArray, skillName in skill
+                  li.skills__item
+                    .skill-section
+                      .skill-section__title= skillName
+                      ul.skill-section__list
+                        each skillsArrayItem in skillsArray
+                          each skillpercent, skillTitle in skillsArrayItem
+                            li.skills-section__item
+                              .skill
+                                svg(class='circles' viewBox='0 0 110 110')
+                                  circle(class='circle__first' r='45', cx='50%', cy='50%', fill='none')
+                                  circle(class='circle__second circle-' + skillpercent r='45', cx='50%', cy='50%', transform='rotate(-90 55 55)')
+                                p.skill__name= skillTitle
+  
+  section.section.map
+    
+    .map__bg
+      img(src="./img/content/map.jpg", alt="").map__bg-img
+    
+    .contacts
+      .subtitle
+        | Контакты
+      ul.contacts__list
+        li.contacts__item
+          img(src="./img/icons/skype.svg", alt="").contacts__item-icon
+          .contacts__item-title
+            p dmitry19959
+        li.contacts__item
+          img(src="./img/icons/skype.svg", alt="").contacts__item-icon
+          .contacts__item-title
+            p dima-danilov1995@mail.ru
+        li.contacts__item
+          img(src="./img/icons/skype.svg", alt="").contacts__item-icon
+          .contacts__item-title
+            p +7 (920) 999 9999
+         

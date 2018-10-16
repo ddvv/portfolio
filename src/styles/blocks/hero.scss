@@ -1,0 +1,30 @@
+.hero {
+  // height: 600px;
+  height: 99vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero__bg-img{
+  height: 100vh;
+}
+
+.hero__title {
+  width: 100%;
+  text-align: center;
+  @include centered(y);
+}
+
+.hero__user-block {
+  @include centered();
+}
+
+.hero__bg{
+  position: absolute;
+}
+
+.hamburger{
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}

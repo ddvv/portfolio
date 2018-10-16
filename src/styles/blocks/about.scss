@@ -1,0 +1,30 @@
+.about {
+  display: flex;
+
+  // @extend %clearfix;
+}
+.about-user-info__text{
+  margin-bottom: 55px; 
+}
+.about__left, .about__right {
+  // float: left;
+  width: 50%;
+  position: relative;
+}
+
+.about__left {
+  background: $white;
+  text-align: center;
+}
+
+.about__right {
+  background: $beige;
+  padding: 0px 60px 60px;
+}
+
+.about-user-info__title{
+  text-align: center;
+}
+.about-user-info__text{
+  margin-bottom: 55px;
+}

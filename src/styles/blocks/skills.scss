@@ -1,0 +1,99 @@
+.skill-section__list{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.skill {
+    display: inline-block;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin-right: 40px;
+  }
+.skill-section{
+  margin-bottom: 35px;  
+}
+.skill-section__title{
+  margin-bottom: 20px;
+}
+.circles {
+    fill: none;
+    stroke-width: 15;
+  }
+  .circle__first {
+    stroke: #dfdcd5;
+  }
+  .circle__second {
+    stroke: #1bb696;
+    stroke-dasharray: .0010 282.6;
+    transition: all 1s;
+  }
+  .skill__name{
+      position: absolute;
+      text-align: center;
+      @include centered();
+  }
+  
+  .circle-0 {
+    stroke-dasharray: (45*2*3.1415*0.0) (45*2*3.1415);
+  }
+  .circle-5 {
+    stroke-dasharray: (45*2*3.1415*0.05) (45*2*3.1415);
+  }
+  .circle-10 {
+    stroke-dasharray: (45*2*3.1415*0.1) (45*2*3.1415);
+  }
+  .circle-15 {
+    stroke-dasharray: (45*2*3.1415*0.15) (45*2*3.1415);
+  }
+  .circle-20 {
+    stroke-dasharray: (45*2*3.1415*0.2) (45*2*3.1415);
+  }
+  .circle-25 {
+    stroke-dasharray: (45*2*3.1415*0.25) (45*2*3.1415);
+  }
+  .circle-30 {
+    stroke-dasharray: (45*2*3.1415*0.3) (45*2*3.1415);
+  }
+  .circle-35 {
+    stroke-dasharray: (45*2*3.1415*0.35) (45*2*3.1415);
+  }
+  .circle-40 {
+    stroke-dasharray: (45*2*3.1415*0.4) (45*2*3.1415);
+  }
+  .circle-45 {
+    stroke-dasharray: (45*2*3.1415*0.45) (45*2*3.1415);
+  }
+  .circle-50 {
+    stroke-dasharray: (45*2*3.1415*0.5) (45*2*3.1415);
+  }
+  .circle-55 {
+    stroke-dasharray: (45*2*3.1415*0.55) (45*2*3.1415);
+  }
+  .circle-60 {
+    stroke-dasharray: (45*2*3.1415*0.6) (45*2*3.1415);
+  }
+  .circle-65 {
+    stroke-dasharray: (45*2*3.1415*0.65) (45*2*3.1415);
+  }
+  .circle-70 {
+    stroke-dasharray: (45*2*3.1415*0.7) (45*2*3.1415);
+  }
+  .circle-75 {
+    stroke-dasharray: (45*2*3.1415*0.75) (45*2*3.1415);
+  }
+  .circle-80 {
+    stroke-dasharray: (45*2*3.1415*0.8) (45*2*3.1415);
+  }
+  .circle-85 {
+    stroke-dasharray: (45*2*3.1415*0.85) (45*2*3.1415);
+  }
+  .circle-90 {
+    stroke-dasharray: (45*2*3.1415*0.9) (45*2*3.1415);
+  }
+  .circle-95 {
+    stroke-dasharray: (45*2*3.1415*0.95) (45*2*3.1415);
+  }
+  .circle-100 {
+    stroke-dasharray: (45*2*3.1415*1.0) (45*2*3.1415);
+  }

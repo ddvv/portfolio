@@ -1,0 +1,25 @@
+.footer{
+    $footer_height: 145px;
+
+    width: 100%;
+    height: $footer_height;
+    background-color: $main-font-color;
+
+    // position: relative;
+    margin-bottom: -$footer_height;
+    opacity: 0.85;
+}
+.footer-top{
+    display: flex;
+    justify-content: space-between;
+    height: 75px;
+    align-items: center;
+    padding: 10px;
+}
+.navigation__item{
+    display: inline-block;
+}
+
+.footer-socials{
+    display: flex;
+}

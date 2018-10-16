@@ -1,0 +1,69 @@
+.title {
+  color: $main-font-color;
+  font-size: 63px;
+  
+  @include bernier();
+  
+  padding: 45px 80px;
+  display: inline-block;
+  position: relative;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  &:after, &:before {
+    content: "";
+    display: block;
+    width: 22px;
+    height: 5px;
+    
+    @include centered(y);
+    
+    background: rgba($main-font-color, .2);
+  }
+
+  $margin : 40px;
+
+  &:after {
+    right: $margin;
+  }
+
+  &:before {
+    left: $margin;
+  }
+}
+
+.subtitle {
+  color: $main-font-color;
+  font-size: 35.01px;
+  
+  @include bernier();
+  
+  padding: 45px 80px;
+  display: inline-block;
+  position: relative;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  &:after, &:before {
+    content: "";
+    display: block;
+    width: 22px;
+    height: 5px;
+    
+    @include centered(y);
+    
+    background: rgba($main-font-color, .2);
+  }
+
+  $margin : 40px;
+
+  &:after {
+    right: $margin;
+  }
+
+  &:before {
+    left: $margin;
+  }
+}

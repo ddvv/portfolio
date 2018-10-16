@@ -1,0 +1,20 @@
+footer.footer
+    
+    .footer-top
+        nav.navigation
+            ul.navigation__list
+                li.navigation__item
+                    a.navigation__item-link(href="./works.html") Мои работы
+                li.navigation__item
+                    a.navigation__item-link(href="./about.html") Обо мне
+                li.navigation__item
+                    a.navigation__item-link(href="./blog.html") Блог
+                li.navigation__item
+                    a.navigation__item-link(href="./index.html") Авторизация
+        ul.footer-socials
+            each item in ['vk', 'github', 'in']
+                li.footer-socials__item
+                    a(href="" class=`socials__link socials__link_${item}`)
+                        img(src=`./img/icons/svg/${item}.svg`, alt="")
+
+    .footer-down

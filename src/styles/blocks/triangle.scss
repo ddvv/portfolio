@@ -1,0 +1,18 @@
+.triangle {
+
+  &_fill {
+
+    &_white {
+      fill: $white;
+    }
+
+    &_beige {
+      fill: $beige;
+    }
+  }
+}
+
+.about__triangles {
+  position: absolute;
+  bottom: 0;
+}
