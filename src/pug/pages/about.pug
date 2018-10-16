@@ -13,7 +13,7 @@ block content
         each item in ['vk', 'github', 'in']
           li.socials__item
             a(href="" class=`socials__link socials__link_${item}`)
-              img(src=`./img/icons/svg/${item}.svg`, alt="")
+              +icon(item, '')
       
       a(href="").hamburger
         img(src="./img/icons/hamburger.svg")
