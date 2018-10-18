@@ -1,20 +1,24 @@
 footer.footer
     
-    .footer-top
-        nav.navigation
-            ul.navigation__list
-                li.navigation__item
-                    a.navigation__item-link(href="./works.html") Мои работы
-                li.navigation__item
-                    a.navigation__item-link(href="./about.html") Обо мне
-                li.navigation__item
-                    a.navigation__item-link(href="./blog.html") Блог
-                li.navigation__item
-                    a.navigation__item-link(href="./index.html") Авторизация
-        ul.footer-socials
-            each item in ['vk', 'github', 'in']
-                li.footer-socials__item
-                    a(href="" class=`socials__link socials__link_${item}`)
-                        img(src=`./img/icons/svg/${item}.svg`, alt="")
+    .footer__row.footer__row-top
+        
+        .footer__left
+            nav.nav-menu
+                ul.nav-menu__list
+                    each link, title in {'Мои работы':'./works.html', 'Обо мне':'./about.html', 'Блог':'./blog.html', 'Авторизация':'./index.html'}
+                        li.nav-menu__item
+                            a(href= link).nav-menu__link= title
+        .footer__right    
+            ul.socials.socials-footer
+                each item in ['vk', 'github', 'in']
+                    li.socials__item
+                        a(href="" class=`socials__link socials__link_${item}`)
+                            +icon(item, `socials__icon socials__icon-${item}`)
 
-    .footer-down
+    .footer__row
+        
+        .footer__left
+            .footer__about Я веб-разработчик из Новосибирска, и этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.
+        
+        .footer__right
+            .footer__about-user-name © Владимир Астахов | создано с любовью в LoftSchool | 2016

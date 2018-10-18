@@ -22,9 +22,14 @@
 .socials__item{
     margin-right: 25px;
     display: inline-block;
+
+    &:last-child{
+        margin-right: 0px;
+    }
 }
 .socials__icon, .hamburger__icon{
     fill: #fff;
+    transition: .3s;
     
     &:hover{
         fill-opacity: 0.5;
