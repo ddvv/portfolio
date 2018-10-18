@@ -24,7 +24,11 @@
     display: inline-block;
 }
 .socials__icon, .hamburger__icon{
-    fill: $white;
+    fill: #fff;
+    
+    &:hover{
+        fill-opacity: 0.5;
+    }
 }
 .socials__icon-vk{
     width: 31px;
