@@ -1,0 +1,44 @@
+.header{
+    position: relative;
+    padding: 30px 30px 0px;
+    display: flex;
+}
+.header-left, .header-right{
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+.header-left{
+    justify-content: flex-start;
+}
+.header-right{
+    justify-content: flex-end;
+}
+.socials{
+    display: flex;
+    align-items: center;
+}
+
+.socials__item{
+    margin-right: 25px;
+    display: inline-block;
+}
+.socials__icon, .hamburger__icon{
+    fill: $white;
+}
+.socials__icon-vk{
+    width: 31px;
+    height: 17px;
+}
+.socials__icon-github{
+    width: 26px;
+    height: 22px;
+}
+.socials__icon-in{
+    width: 24px;
+    height: 22px;
+}
+.hamburger__icon{
+    width: 40px;
+    height: 35px;
+}
