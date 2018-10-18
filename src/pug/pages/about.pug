@@ -6,27 +6,28 @@ block content
   section.section.hero
     
     .hero__bg
-      img(src="./img/about/header/photo.png", alt="").hero__bg-img
+      img(src="./img/content/portfolio.jpg", alt="").hero__bg-img
 
     header.header
-      ul.socials
-        each item in ['vk', 'github', 'in']
-          li.socials__item
-            a(href="" class=`socials__link socials__link_${item}`)
-              +icon(item, '')
-      
-      a(href="").hamburger
-        img(src="./img/icons/hamburger.svg")
+      .header-left
+        ul.socials
+          each item in ['vk', 'github', 'in']
+            li.socials__item
+              a(href="" class=`socials__link socials__link_${item}`)
+                +icon(item)
+      .header-right
+        a(href="").hamburger
+          +icon('hamburger')
     
     a(href="").down-arrow
-      img(src="./img/icons/arrow_down.svg").down-arrow__icon
+      +icon('portf_arrow_down', 'down-arrow__icon')
     
     .hero__title
       img(src="./img/about/header/portfolio-header.png", alt="").section-title
       .user.hero__user-block
         .user__photo
           .user__photo-avatar
-            img(src="./img/about/header/doge.jpg", alt="")
+            img(src="./img/content/doge.jpg", alt="")
         .user__name Doge Doge
         .user__desc Веб-сайт Doge
         
