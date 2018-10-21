@@ -4,3 +4,8 @@ mixin title (title, url, additionClass)
 mixin icon(iconName, iconClass)
   svg(class=`${iconClass}`)
     use(xlink:href=`./img/icons/sprite.svg#${iconName}`)
+
+mixin triangle(leftColor, rightColor)
+  svg(class="triangle about__triangles" xmlns='http://www.w3.org/2000/svg', viewBox='0 0 1000 85', preserveAspectRatio='none')
+    polygon(class=`triangle_fill_${leftColor}` points='0,0   0,86   500.8,86   500.8,75.5')
+    polygon(class=`triangle_fill_${rightColor}` points='1000,0   1000,86   500,86   500,75.5')

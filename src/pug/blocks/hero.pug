@@ -1,0 +1,16 @@
+.hero__bg
+
+header.header
+  .header-left
+    ul.socials
+      each item in ['vk', 'github', 'in']
+        li.socials__item
+          a(href="" class=`socials__link socials__link_${item}`)
+            +icon(item, `socials__icon socials__icon-${item}`)
+  .header-right
+    .hamburger
+      a(href="").hamburger__link
+        +icon('hamburger', 'hamburger__icon')
+
+a(href="").down-arrow
+  +icon('portf_arrow_down', 'down-arrow__icon')

@@ -1,0 +1,92 @@
+.slider {
+    display: flex;
+    flex-flow: column wrap;
+}
+  
+  .slider__col {
+    &_left {
+      background: $white;
+      justify-content: center;
+      align-items: center;
+    }
+    &_right {
+      background: $beige;
+      flex-direction: column;
+    }
+  }
+  
+  
+  .slider__desc-title {
+    margin-bottom: 20px;
+  }
+  
+  .slider__desc-skills {
+    padding: 20px 0;
+    border-top: 1px solid $green;
+    border-bottom: 1px solid $green;
+    color: $green;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 40px;
+  }
+  
+  .slider__desc-btn {
+    text-align: center;
+  }
+  
+  .slider__btns {
+    min-height: 100px;
+    height: 100%;
+    display: flex;
+  }
+  
+  .slider__btn {
+    min-height: 100%;
+    flex: 1;
+    &_left {
+      background: url('../img/btns/up.jpg') center center no-repeat;
+      background-size: cover;
+    }
+    &_right {
+      background: url('../img/btns/down.jpg') center center no-repeat;
+      background-size: cover;
+    }
+  }
+  
+  .slider__display-pic {
+    max-width: 100%;
+    display: block;
+    max-height: 100%;
+  }
+  
+  .slider {
+    display: flex;
+    flex-flow: column wrap;
+  
+    @include tablets {
+      flex-wrap: nowrap;
+      height: auto;
+    }
+  }
+  
+  .slider__desc-info {
+    margin: auto;
+  }
+  
+  .slider__desc {
+    height: 100%;
+    display: flex;
+  }
+  
+  .slider__display {
+    flex: 4;
+  
+    @include tablets {
+      order: -1;
+    }
+  }
+  
+  .slider__btns {
+    flex: 1;
+  }

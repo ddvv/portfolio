@@ -2,3 +2,37 @@ extends ../main.layout.pug
 block title
   | Works
 block content
+    
+  section.section.hero
+  
+    include ../blocks/hero.pug
+    
+    .hero__title
+      img(src="./img/decor/portfolio-header.png", alt="").section-title
+      .user.hero__user-block
+        .user__photo
+          .user__photo-avatar
+            img(src="./img/content/doge.jpg", alt="")
+        .user__name Doge Doge
+        .user__desc Веб-сайт Doge
+        
+    +triangle('beige', 'beige')
+  
+  section.section.slider
+    .works-title
+      +title('Мои работы', 'works-header.png', 'about__section-title')
+    .slider__desc
+      .slider__desc-info
+        .slider__desc-title
+          .block-title Сайт школы онлайн образования
+        .slider__desc-skills
+          | HTML, css, javascript
+        .slider__desc-btn
+          a(href="#").btn Посмотреть сайт
+    
+    .slider__display
+      img(src="img/content/1.png" alt="").slider__display-pic
+    
+    .slider__btns
+      a(href="#").slider__btn.slider__btn_left
+      a(href="#").slider__btn.slider__btn_right

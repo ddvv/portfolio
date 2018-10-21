@@ -5,23 +5,7 @@ block content
 
   section.section.hero
     
-    .hero__bg
-      img(src="./img/content/portfolio.jpg", alt="").hero__bg-img
-
-    header.header
-      .header-left
-        ul.socials
-          each item in ['vk', 'github', 'in']
-            li.socials__item
-              a(href="" class=`socials__link socials__link_${item}`)
-                +icon(item, `socials__icon socials__icon-${item}`)
-      .header-right
-        .hamburger
-          a(href="").hamburger__link
-            +icon('hamburger', 'hamburger__icon')
-    
-    a(href="").down-arrow
-      +icon('portf_arrow_down', 'down-arrow__icon')
+    include ../blocks/hero.pug
     
     .hero__title
       img(src="./img/about/header/portfolio-header.png", alt="").section-title
@@ -32,9 +16,7 @@ block content
         .user__name Doge Doge
         .user__desc Веб-сайт Doge
         
-    svg(class="triangle about__triangles" xmlns='http://www.w3.org/2000/svg', viewBox='0 0 1000 85', preserveAspectRatio='none')
-      polygon(class="triangle_fill_white" points='0,0   0,86   500.8,86   500.8,75.5')
-      polygon(class="triangle_fill_beige" points='1000,0   1000,86   500,86   500,75.5')
+    +triangle('white', 'beige')
   
   section.section.about
     

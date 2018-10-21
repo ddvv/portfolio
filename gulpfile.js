@@ -6,27 +6,27 @@ const   gulp = require('gulp'),
         del = require('del'),
         browserSync = require('browser-sync').create();
  
-const paths = {
-    root: './build',
-    pug: {
-        pages: './src/pug/pages/*.pug',
-        src: './src/pug/**/*.pug',
-        dest: './build'
-    },
-    styles: {
-        main: './src/styles/main.scss',
-        src: './src/styles/**/*.scss',
-        dest: './build/css'
-    },
-    // scripts: {
-    //     src: './src/scripts/*.js',
-    //     dest: './build/scripts'
-    // },
-    svgSprite: {
-        src: './src/images/icons/*.svg',
-        dest: './build/img/icons',
-        watch: './src/images/icons/*.svg',
-    }
+const   paths = {
+        root: './build',
+        pug: {
+            pages: './src/pug/pages/*.pug',
+            src: './src/pug/**/*.pug',
+            dest: './build'
+        },
+        styles: {
+            main: './src/styles/main.scss',
+            src: './src/styles/**/*.scss',
+            dest: './build/css'
+        },
+        // scripts: {
+        //     src: './src/scripts/*.js',
+        //     dest: './build/scripts'
+        // },
+        svgSprite: {
+            src: './src/images/icons/*.svg',
+            dest: './build/img/icons',
+            watch: './src/images/icons/*.svg',
+        }
 };
 
 // очистка
@@ -69,10 +69,10 @@ function styles() {
                 'Opera 12.1'
             ]
         }))
-        // .pipe(gp.cssUnit({
-        //     type     :    'px-to-rem',
-        //     rootSize :    16
-        // }))
+        .pipe(gp.cssUnit({
+            type     :    'px-to-rem',
+            rootSize :    16
+        }))
         .pipe(gp.sourcemaps.write())
         .pipe(gulp.dest(paths.styles.dest))
 }
