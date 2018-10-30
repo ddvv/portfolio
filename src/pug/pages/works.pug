@@ -19,20 +19,57 @@ block content
     +triangle('beige', 'beige')
   
   section.section.slider
-    .works-title
-      +title('Мои работы', 'works-header.png', 'about__section-title')
-    .slider__desc
-      .slider__desc-info
-        .slider__desc-title
-          .block-title Сайт школы онлайн образования
-        .slider__desc-skills
-          | HTML, css, javascript
-        .slider__desc-btn
-          a(href="#").btn Посмотреть сайт
-    
-    .slider__display
-      img(src="img/content/1.png" alt="").slider__display-pic
-    
-    .slider__btns
-      a(href="#").slider__btn.slider__btn_left
-      a(href="#").slider__btn.slider__btn_right
+    .slider-title
+      .works-title
+        +title('Мои работы', 'works-header.png', 'about__section-title')
+    .slider-content
+      
+      .slider__col-left
+        
+        .slider__desc
+          .slider__desc-info
+            .slider__desc-title
+              .block-title Сайт школы онлайн образования
+            .slider__desc-skills
+              | HTML, css, javascript
+            .slider__desc-btn
+              a(href="#").btn Посмотреть сайт
+      
+      .slider__col-right
+        
+        .slider__display
+          img(src="img/content/1.png" alt="").slider__display-pic
+        
+        .slider-controls.slider-down
+          .slider-controls__display
+            ul.slider__list
+              li.slider__item
+                  img(src='./img/slider/work-1.png')
+              li.slider__item
+                  img(src='./img/slider/work-2.png')
+              li.slider__item
+                  img(src='./img/slider/work-3.png')
+              li.slider__item.active
+                  img(src='./img/slider/work-4.png')
+          
+          .slider__btn
+            a(href="#").slider__btn.slider__btn-down
+
+        .slider-controls.slider-up
+          .slider-controls__display
+            ul.slider__list
+              li.slider__item
+                  img(src='./img/slider/work-1.png')
+              li.slider__item.active
+                  img(src='./img/slider/work-2.png')
+              li.slider__item
+                  img(src='./img/slider/work-3.png')
+              li.slider__item
+                  img(src='./img/slider/work-4.png')
+          
+          .slider__btn
+            a(href="#").slider__btn.slider__btn-up
+          
+  section.section.reviews
+    .reviews-title
+      +title('Отзывы о моей работе', 'about-header.png', 'about__section-title')
