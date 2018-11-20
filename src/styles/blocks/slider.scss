@@ -7,22 +7,37 @@
 .slider-content{
   display: flex;
 }
-.slider__col-left, .slider__col-right{
-  width: 50%;
-}
   
 .slider__col {
+  
   &-left {
-    background: $beige;
     justify-content: center;
     align-items: center;
   }
+  
   &-right {
-    background: $beige;
-    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
   }
 }
 
+.slider__col-left, .slider__col-right{
+  width: 50%;
+  background: $beige;
+}
+
+/*
+** Style for slider__col-left
+*/
+
+.slider__desc {
+  height: 100%;
+  display: flex;
+}
+
+.slider__desc-info {
+  margin: auto;
+}
 
 .slider__desc-title {
   margin-bottom: 20px;
@@ -43,75 +58,38 @@
   text-align: center;
 }
 
-.slider__btns {
-  min-height: 100px;
-  height: 100%;
-  display: flex;
-}
+/*
+** Style for slider__col-right
+*/
 
-.slider__btn {
-  min-height: 100%;
-  flex: 1;
-  &_left {
-    background: url('../img/btns/up.jpg') center center no-repeat;
-    background-size: cover;
-  }
-  &_right {
-    background: url('../img/btns/down.jpg') center center no-repeat;
-    background-size: cover;
-  }
+.slider__display {
+  flex-basis: 100%;
+  text-align: center;
 }
 
 .slider__display-pic {
   max-width: 100%;
-  // display: block;
   max-height: 100%;
 }
 
-.slider {
-  display: flex;
-  flex-flow: column wrap;
-
-  // @include tablets {
-  //   flex-wrap: nowrap;
-  //   height: auto;
-  // }
-}
-
-.slider__desc-info {
-  margin: auto;
-}
-
-.slider__desc {
-  height: 100%;
-  display: flex;
-}
-
-.slider__display {
-  // flex: 4;
-  text-align: center;
-  // @include tablets {
-  //   order: -1;
-  // }
-}
-
-.slider__btns {
-  // flex: 1;
-  display: flex;
-  justify-content: center;
-}
-
-
 .slider-controls{
+  width: 50%;
   display: inline-block;
   vertical-align: top;
 }
 
+.slider-up {
+  .slider__item {
+    top: 100%;
+  }
+}
+
 .slider-controls__display{
-  width: 400px;
+  width: 160px;
   height: 200px;
   position: relative;
   overflow: hidden;
+  margin: 0 auto;
 }
 
 .slider__list {
@@ -120,12 +98,6 @@
   left: 0;
   right: 0;
   bottom: 0;
-}
-
-.slider-up {
-  .slider__item {
-    top: 100%;
-  }
 }
 
 .slider__item {
@@ -147,5 +119,20 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+}
+
+.slider__btn {
+  min-height: 100%;
+  flex: 1;
+  
+  &_left {
+    background: url('../img/btns/up.jpg') center center no-repeat;
+    background-size: cover;
+  }
+  
+  &_right {
+    background: url('../img/btns/down.jpg') center center no-repeat;
+    background-size: cover;
   }
 }
