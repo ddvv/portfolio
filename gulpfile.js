@@ -1,32 +1,42 @@
-const   gulp = require('gulp'),
+const gulp = require('gulp');
         
-        gulpLoadPlugins = require('gulp-load-plugins'),
-        gp = gulpLoadPlugins(),
-        fs = require('fs'),
-        del = require('del'),
-        browserSync = require('browser-sync').create();
+const gulpLoadPlugins = require('gulp-load-plugins');
+const gp = gulpLoadPlugins();
+const fs = require('fs');
+const del = require('del');
+const browserSync = require('browser-sync').create();
+
+const gulpWebpack = require('gulp-webpack');
+const webpack = require('webpack');
+const webpackConfig = require('./webpack.config.js');
  
-const   paths = {
-        root: './build',
-        pug: {
-            pages: './src/pug/pages/*.pug',
-            src: './src/pug/**/*.pug',
-            dest: './build'
-        },
-        styles: {
-            main: './src/styles/main.scss',
-            src: './src/styles/**/*.scss',
-            dest: './build/css'
-        },
-        // scripts: {
-        //     src: './src/scripts/*.js',
-        //     dest: './build/scripts'
-        // },
-        svgSprite: {
-            src: './src/images/icons/*.svg',
-            dest: './build/img/icons',
-            watch: './src/images/icons/*.svg',
-        }
+const paths = {
+    
+    root: './build',
+    
+    pug: {
+        pages: './src/pug/pages/*.pug',
+        src: './src/pug/**/*.pug',
+        dest: './build'
+    },
+    
+    styles: {
+        main: './src/styles/main.scss',
+        src: './src/styles/**/*.scss',
+        dest: './build/css'
+    },
+    
+    scripts: {
+        src: './src/scripts/*.js',
+        dest: './build/scripts',
+        watch: './src/scripts/**/*.js'
+    },
+    
+    svgSprite: {
+        src: './src/images/icons/*.svg',
+        dest: './build/img/icons',
+        watch: './src/images/icons/*.svg',
+    }
 };
 
 // очистка
@@ -77,6 +87,13 @@ function styles() {
         .pipe(gulp.dest(paths.styles.dest))
 }
 
+// webpack
+function scripts() {
+    return gulp.src(paths.scripts.src)
+        .pipe(gulpWebpack(webpackConfig, webpack))
+        .pipe(gulp.dest(paths.scripts.dest))
+}
+
 // server
 function serve() {
     browserSync.init({
@@ -92,10 +109,16 @@ function serve() {
 function watch() {
     gulp.watch(paths.pug.src, gulp.series(templates, reload));
     gulp.watch(paths.styles.src, gulp.series(styles, reload));
+    gulp.watch(paths.scripts.watch, gulp.series(scripts, reload));
     gulp.watch('./src/images/**/*', gulp.series(images, reload));
     gulp.watch(paths.svgSprite.watch, gulp.series(svgSprite, reload));
     gulp.watch('./src/fonts/**/*', gulp.series(fonts, reload));
     gulp.watch('./src/content.json', gulp.series(templates, reload));
+}
+
+function reload(done){
+    browserSync.reload();
+    done();
 }
 
 function images(){
@@ -134,13 +157,9 @@ function fonts(){
         .pipe(gulp.dest('./build/fonts'))
 }
 
-function reload(done){
-    browserSync.reload();
-    done();
-}
-
 exports.templates = templates;
 exports.styles = styles;
+exports.scripts = scripts;
 exports.clean = clean;
 exports.serve = serve;
 exports.watch = watch;
@@ -154,7 +173,8 @@ gulp.task('default', gulp.series(
         images,
         svgSprite,
         fonts,
-        styles, 
+        styles,
+        scripts, 
         templates
     ),
     gulp.parallel(
